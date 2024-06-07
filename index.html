@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Currence Calculator</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+  <div class="container1">
+      <h2><br>XYZ-COMPANY</h2>
+     <h4>CURRENCY EXCHANGE PLATFORM</h4><br>
+    <div class="container">
+     <form class="form-inline">
+       <div class="form-group mb-2" style="margin-left:-25rem;"><br>
+         <label for="amount" style="margin-left:-7.5rem;">Amount</label><br>
+          <input type="number" class="form-control" id="amount"/>
+       </div>
+       <div class="form-group mx-sm-3 mb-2" style="margin-top:-4rem;">
+          <label for="amount" style="margin-left:-7.5rem;">From</label><br>
+          <select class="form-control" id="currency-1" required>
+            <option>RWF</option>
+            <option>EUR</option>
+            <option>USD</option>
+          </select>
+        </div>
+        <div class="form-group mx-sm-3 mb-2"style="margin-top:-4rem;margin-left:24rem;">
+          <!-- <label>convert to</label> -->
+          <label for="amount" style="margin-left:-8.5rem;">To</label><br>
+          <select class="form-control" id="currency-2" required>
+            <option>EUR</option>
+            <option>USD</option>
+            <option>RWF</option>
+          </select>
+        </div>  <br>
+        <button class="btn calculate-btn btn-primary mb-2" style="margin-left:-25rem;">convert</button>
+      </form>
+      <div class="result" style="margin-left:17.5rem; text-decoration:bold;">
+        <p style="margin-top:-4.5rem;">
+            <p >Results:</p>
+          <span class="given-amount"></span> 
+          <span class="base-currency"></span>
+          <span class="final-result"></span> 
+          <span class="second-currency"></span>
+        </p>
+      </div>
+    </div> 
+  </div>
+  <div class="container2">
+hi
+  </div>
+  <script>
+  
+      var crrncy = {'EUR': {'RWF': 1000, 'USD': 8.83}, 'USD': {'RWF': 1200, 'EUR': 2.2}}
+  var btn = document.querySelector('.calculate-btn');
+  var baseCurrencyInput = document.getElementById('currency-1');
+  var secondCurrencyInput = document.getElementById('currency-2');
+  var amountInput = document.getElementById('amount');
+  var toShowAmount = document.querySelector('.given-amount');
+  var toShowBase = document.querySelector('.base-currency');
+  var toShowSecond = document.querySelector('.second-currency');
+  var toShowResult = document.querySelector('.final-result');
+  
+  function convertCurrency(event) {
+    event.preventDefault();
+    var amount = amountInput.value;
+    var from = baseCurrencyInput.value;
+    var to = secondCurrencyInput.value;
+    var result = 0;
+    
+    try{
+      if (from == to){
+        result = amount;
+      } else {
+       result = amount * crrncy[from][to];
+    }
+    }
+    catch(err) {
+      result = amount * (1 / crrncy[to][from]);
+    }
+    
+    toShowAmount.innerHTML = amount;
+    toShowBase.textContent = from + ' = ';
+    toShowSecond.textContent = to;
+    toShowResult.textContent = result; 
+  }
+  
+  btn.addEventListener('click', convertCurrency);
+  
+  
+  </script>
+</body>
+</html>

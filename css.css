@@ -1,0 +1,60 @@
+.container1{
+    background-color: rgb(3, 3, 80);
+   text-align: center;
+    width: 60%;
+    height: 13rem;
+   margin-left: 15rem;
+   color: whitesmoke;
+}
+.container2{
+    background-color: rgb(245, 245, 250);
+   text-align: center;
+    width: 60%;
+    height: auto;
+   margin-left: 15rem;
+   color: whitesmoke;
+   height: 13rem;
+}
+body{
+    background-color: gray;
+}
+.container{
+    background-color: whitesmoke;
+    height: 11rem;
+    width: 80%;
+    margin-left: 5rem;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    color: black;
+    border-bottom-style:initial;
+    box-shadow: 0px 1px 1px 0px gainsboro;
+}
+input {
+    height: 2.5rem;
+    width: 10rem;
+  }
+
+  button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    width: 10rem;
+    background-color: rgb(3, 3, 80);
+    border: none;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+
+  #result {
+    font-size: 18px;
+    margin-top: 20px;
+
+  }
+  select{
+
+    height: 3rem;
+   width: 10rem;
+  }
